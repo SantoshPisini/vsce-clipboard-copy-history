@@ -1,0 +1,119 @@
+{
+  "name": "sp-clipboard-copy-history",
+  "displayName": "Clipboard - Copy History",
+  "description": "It a Clipboard, where you can cut, copy, paste and re-paste.",
+  "version": "0.0.1",
+  "publisher": "santosh-pisini",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "cut",
+    "history"
+  ],
+  "activationEvents": [
+    "onCommand:sp-clipboard-copy-history.helloWorld"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Clipboard - Copy History",
+        "properties": {
+          "sp-clipboard-copy-history.capacity": {
+            "type":"integer",
+            "minimum": 1,
+            "default": 10,
+            "maximum": 100,
+            "description": "Maximum number of copied items to keep in history"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "sp-clipboard-copy-history.copy",
+        "title": "Clipboard: Copy"
+      },
+      {
+        "command": "sp-clipboard-copy-history.cut",
+        "title": "Clipboard: Cut"
+      },
+      {
+        "command": "sp-clipboard-copy-history.paste",
+        "title": "Clipboard: Paste"
+      },
+      {
+        "command": "sp-clipboard-copy-history.pastefromhistory",
+        "title": "Clipboard: Paste from history"
+      },
+      {
+        "command": "sp-clipboard-copy-history.show",
+        "title": "Clipboard: Show History"
+      },
+      {
+        "command": "sp-clipboard-copy-history.clear",
+        "title": "Clipboard: Clear History"
+      }
+    ],
+    "keybindings":[
+      {
+				"key": "ctrl+c",
+				"mac": "cmd+c",
+				"command": "sp-clipboard-copy-history.copy",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "ctrl+x",
+				"mac": "cmd+x",
+				"command": "sp-clipboard-copy-history.cut",
+				"when": "editorTextFocus"
+			},
+			{
+        "key": "ctrl+v",
+				"mac": "cmd+v",
+				"command": "sp-clipboard-copy-history.paste",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "shift+ctrl+v",
+				"mac": "shift+cmd+v",
+				"command": "sp-clipboard-copy-history.pastefromhistory",
+				"when": "editorTextFocus"
+			},
+      {
+				"key": "shift+ctrl+Escape",
+				"mac": "shift+cmd+Escape",
+				"command": "sp-clipboard-copy-history.clear",
+				"when": "editorTextFocus"
+			}
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0"
+  }
+}
