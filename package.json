@@ -3,7 +3,7 @@
   "displayName": "Clipboard - Copy History",
   "description": "It a Clipboard, where you can cut, copy, paste and re-paste.",
   "version": "0.0.1",
-  "publisher": "santosh-pisini",
+  "publisher": "Santosh Pisini",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -17,6 +17,14 @@
     "cut",
     "history"
   ],
+  "bugs": {
+    "url": "https://github.com/SantoshPisini/vsce-clipboard-copy-history/issues"
+  },
+  "homepage": "https://github.com/SantoshPisini/vsce-clipboard-copy-history/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SantoshPisini/vsce-clipboard-copy-history/"
+  },
   "activationEvents": [
     "onCommand:sp-clipboard-copy-history.helloWorld"
   ],
@@ -27,7 +35,7 @@
         "title": "Clipboard - Copy History",
         "properties": {
           "sp-clipboard-copy-history.capacity": {
-            "type":"integer",
+            "type": "integer",
             "minimum": 1,
             "default": 10,
             "maximum": 100,
@@ -62,37 +70,37 @@
         "title": "Clipboard: Clear History"
       }
     ],
-    "keybindings":[
+    "keybindings": [
       {
-				"key": "ctrl+c",
-				"mac": "cmd+c",
-				"command": "sp-clipboard-copy-history.copy",
-				"when": "editorTextFocus"
-			},
-			{
-				"key": "ctrl+x",
-				"mac": "cmd+x",
-				"command": "sp-clipboard-copy-history.cut",
-				"when": "editorTextFocus"
-			},
-			{
+        "key": "ctrl+c",
+        "mac": "cmd+c",
+        "command": "sp-clipboard-copy-history.copy",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+x",
+        "mac": "cmd+x",
+        "command": "sp-clipboard-copy-history.cut",
+        "when": "editorTextFocus"
+      },
+      {
         "key": "ctrl+v",
-				"mac": "cmd+v",
-				"command": "sp-clipboard-copy-history.paste",
-				"when": "editorTextFocus"
-			},
-			{
-				"key": "shift+ctrl+v",
-				"mac": "shift+cmd+v",
-				"command": "sp-clipboard-copy-history.pastefromhistory",
-				"when": "editorTextFocus"
-			},
+        "mac": "cmd+v",
+        "command": "sp-clipboard-copy-history.paste",
+        "when": "editorTextFocus"
+      },
       {
-				"key": "shift+ctrl+Escape",
-				"mac": "shift+cmd+Escape",
-				"command": "sp-clipboard-copy-history.clear",
-				"when": "editorTextFocus"
-			}
+        "key": "shift+ctrl+v",
+        "mac": "shift+cmd+v",
+        "command": "sp-clipboard-copy-history.pastefromhistory",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "shift+ctrl+Escape",
+        "mac": "shift+cmd+Escape",
+        "command": "sp-clipboard-copy-history.clear",
+        "when": "editorTextFocus"
+      }
     ]
   },
   "scripts": {
