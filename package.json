@@ -2,7 +2,8 @@
   "name": "sp-clipboard-copy-history",
   "displayName": "Clipboard - Copy History",
   "description": "It a Clipboard, where you can cut, copy, paste and re-paste.",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "icon": "./assets/logo.png",
   "publisher": "Santosh Pisini",
   "engines": {
     "vscode": "^1.74.0"
